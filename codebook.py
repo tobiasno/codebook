@@ -49,59 +49,9 @@ def printIt():
 
 ## Maps a given integer to a letter from the latin alphabet.
 def mapIntToString( i ):
-	if( i == 1 ):
-		return "A";
-	elif( i == 2 ):
-		return "B";
-	elif( i == 3 ):
-		return "C";
-	elif( i == 4 ):
-		return "D";
-	elif( i == 5 ):
-		return "E";
-	elif( i == 6 ):
-		return "F";
-	elif( i == 7 ):
-		return "G";
-	elif( i == 8 ):
-		return "H";
-	elif( i == 9 ):
-		return "I";
-	elif( i == 10 ):
-		return "J";
-	elif( i == 11 ):
-		return "K";
-	elif( i == 12 ):
-		return "L";
-	elif( i == 13 ):
-		return "M";
-	elif( i == 14 ):
-		return "N";
-	elif( i == 15 ):
-		return "O";
-	elif( i == 16 ):
-		return "P";
-	elif( i == 17 ):
-		return "Q";
-	elif( i == 18 ):
-		return "R";
-	elif( i == 19 ):
-		return "S";
-	elif( i == 20 ):
-		return "T";
-	elif( i == 21 ):
-		return "U";
-	elif( i == 22 ):
-		return "V";
-	elif( i == 23 ):
-		return "W";
-	elif( i == 24 ):
-		return "X";
-	elif( i == 25 ):
-		return "Y";
-	elif( i == 26 ):
-		return "Z";
-	else:
+	if( i < 1 or i > 26 ):
 		return "Error";
+
+	return str(unichr(64 + i));
 
 printIt();
