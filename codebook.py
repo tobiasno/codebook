@@ -45,10 +45,10 @@ def generateBook( n, columns ):
 
 ## Prints the output
 def printIt():
-	print generateBook(100, 4); # Change the size of the book here
+	print generateBook( 100, 4 ); # Change the size of the book here
 
 ## Maps a given integer to a letter from the latin alphabet.
-def mapIntToString(i):
+def mapIntToString( i ):
 	if( i == 1 ):
 		return "A";
 	elif( i == 2 ):
