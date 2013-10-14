@@ -23,7 +23,7 @@ import random
 randObject = random.SystemRandom();
 
 ## Generates a block of five random latin letters and
-## returns them an string.
+## returns them as string.
 def generateBlock():
 	result = "";
 	for i in range( 5 ):
