@@ -51,6 +51,6 @@ def printIt():
 def mapIntToString( i ):
 	if( i < 1 or i > 26 ):
 		return "Error";
-	return str( unichr( 64 +  i ) );
+	return str( unichr( 64 + i ) );
 
 printIt();
