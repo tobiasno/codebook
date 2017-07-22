@@ -6,30 +6,28 @@
 ## and available entropy.
 ## WARNING: Use in real situations is not recommended!
 
-from __future__ import division
-import math
-import random
+import string
+import secrets
 
-## System Generator
-## Uses /dev/urandom or Windows CryptGenRandom
+## Now implemented with python's secrets library and
+## therefor should use the best source of entropy on
+## the system.
 ##
+## Requires at least Python3.6
+## 
 ## Generates pseudo-random numbers which can be considered
 ## sufficient for cryptographic purposes.
 ##
-## /dev/random will produce better results but can run
-## out of entropy quickly.
 ## Always check the available entropy on your system.
 ## Linux: cat /proc/sys/kernel/random/entropy_avail
-randObject = random.SystemRandom()
 
 ## Generates a block of five random latin letters and
 ## returns them as string.
 def generateBlock():
+    alphabet = string.ascii_uppercase
     result = ""
     for i in range(5):
-        randNumber = randObject.randint(1, 26)
-        letter = mapIntToString(randNumber)
-        result += letter
+        result += secrets.choice(alphabet)
     return result
 
 ## Generates a codebook of the given size and returns
@@ -45,12 +43,6 @@ def generateBook(n, columns):
 
 ## Prints the output
 def printIt():
-    print generateBook(100, 4) # Change the size of the book here
-
-## Maps a given integer to a letter from the latin alphabet.
-def mapIntToString(i):
-    if(i < 1 or i > 26):
-        return "Error"
-    return str(unichr(64 + i))
+    print(generateBook(100, 4)) # Change the size of the book here
 
 printIt()
