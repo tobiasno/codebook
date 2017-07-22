@@ -20,37 +20,37 @@ import random
 ## out of entropy quickly.
 ## Always check the available entropy on your system.
 ## Linux: cat /proc/sys/kernel/random/entropy_avail
-randObject = random.SystemRandom();
+randObject = random.SystemRandom()
 
 ## Generates a block of five random latin letters and
 ## returns them as string.
 def generateBlock():
-	result = "";
-	for i in range( 5 ):
-		randNumber = randObject.randint( 1, 26 );
-		letter = mapIntToString( randNumber );
-		result += letter;
-	return result;
+    result = ""
+    for i in range(5):
+        randNumber = randObject.randint(1, 26)
+        letter = mapIntToString(randNumber)
+        result += letter
+    return result
 
 ## Generates a codebook of the given size and returns
 ## it as String.
-def generateBook( n, columns ):
-	result = "";
-	for i in range( n ):
-		if( i % columns == 0 ):
-			result += "\n"
-		result += generateBlock();
-		result += " ";
-	return result;
+def generateBook(n, columns):
+    result = ""
+    for i in range(n):
+        if(i % columns == 0):
+            result += "\n"
+        result += generateBlock()
+        result += " "
+    return result
 
 ## Prints the output
 def printIt():
-	print generateBook( 100, 4 ); # Change the size of the book here
+    print generateBook(100, 4) # Change the size of the book here
 
 ## Maps a given integer to a letter from the latin alphabet.
-def mapIntToString( i ):
-	if( i < 1 or i > 26 ):
-		return "Error";
-	return str( unichr( 64 + i ) );
+def mapIntToString(i):
+    if(i < 1 or i > 26):
+        return "Error"
+    return str(unichr(64 + i))
 
-printIt();
+printIt()
